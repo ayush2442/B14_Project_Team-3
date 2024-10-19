@@ -1,0 +1,139 @@
+16th Oct, 2024
+
+1. Open terminal for the project folder (ctrl + shift + ~)
+2. Check for python avaiable (python --version)
+3. Check for pip (pip --version)
+4. We need to install Django (pip install django)
+5. Create basic django project (django-admin startproject <projectname>)            --> we had used sample
+
+
+
+1. Open the terminal for the project folder
+    -> terminal -> new terminal
+    or
+    -> ctrl + shift + ~
+2. check for the python availability(python --version)
+3. check for the pip (pip --version)
+4. We need to install django in our folder
+    pip install django
+    sucessfully installed the requrirements asgiref-3.8.1 django-5.1.2
+5. we need to create a basic django project -> 'sample'
+    django-admin startproject projectname
+ 
+What is Django?
+    -> Free & Opensource framework for building web applications with python.
+ 
+what is framework?
+    -> we are going to use a new package, that are already available in the technology
+    -> collection of resources that are useful for the deveopers to complete the much easier.
+applications?
+    -> we need to install separate technologies that are used for the projects
+ 
+Why we need to use django?
+    -> less codes
+    -> less time to create and complete the project
+ 
+Companies that are using django for their projects:
+    -> Youtube
+    -> Instagram
+    -> Spotify
+    -> DropBox
+ 
+Advantages of using django:
+    -> it will have a inbuilt admin site
+    -> ORM (Object Relational Mapper)
+        -> tool used to connect the programming code and database
+    -> Authentication
+    -> Caching/cookies
+ 
+manage.py file
+    -> is the main file for our djang project
+    -> used to run the server for our project
+ 
+settings.py file
+    -> used to store some pre-required applications for our django project
+    -> admin - have the admin access for our project
+    -> auth - commands for our authentication purpose
+    -> if you want to create a new app, then you need to link that app to our settings.py
+ 
+urls.py file
+    -> used for the navigation or routing methods
+ 
+How to run the django project?
+1. move the terminal to our project file
+    cd sample
+2. write the run command to run our django project in the server
+    python manage.py runserver
+
+
+
+
+17th Oct,2024
+
+We have to create a sample web page in our django peoject.
+1. we need to create a new application for our django project.
+    -> because the apps which we are going to create, will act as the web page.
+    -> in django, when we create a new web page, we can't create it directly, we need to create it as app.
+ 
+To stop the server, press ctrl + C
+ 
+    first we need to create a app in our django project
+    -> to create a app, we need to use the admin command as 'startapp'
+        django-admin startapp appname
+ 
+        django-admin startapp demopage
+inside that demopage, we will have lot of python files like main project folder
+ 
+views.py file:
+    used to display the web page or used to export the web page, which we have created to our main project folder 'sample'
+    -> will have only functions inside it.
+ 
+how to create a function in python:
+    def functionName(arguments):
+        statement
+        return ->
+ 
+2. We are create the web page with the help of html file.
+    1. we need to create a new folder with the name 'templates' inside our demopage app.
+    2. inside the templates folder, create a new file with the name as 'index.html'
+    3. After creating the html file, fill your html tags and codes.
+ 
+if you are going to start the html codes, we need to have from predefined structure of html page.
+    1. type ! symbol and press enter or tab space
+    2. fill the code
+ 
+3. link the app folder and main project folder
+    1. we need to complete the code in views.py
+    2. inside views.py create a function with the name as 'home' with an argument called as 'request'.
+    3. inside the function, return the web page, which you want to display as output.
+        -> we need to use a function render(), this render function is used to open your web page as output.
+        -> render() will have 2 arguments, one is request and another one is the web page name, which you want to open.
+4. After filling the views.py code, jump to our main project folder.
+    1. we are going to install our new app 'demopage' inside our main folder.
+        -> we needs to open the settings.py
+        -> go to installed_app and add your new app name at the last with comma
+            'demopage',
+    2. we need to create a url for our new html page
+        -> we need to open urls.py
+        -> go to urlspattern and create a new path for your new html page.
+ 
+        syntax:
+        path('urlname',function call to views.py,name of html page)
+ 
+        path('',views.home,name='index')
+ 
+        -> import the views from demopage
+            from demopage import views
+ 
+5. we can stop the server and re-run the server or we can reload the current server
+ 
+As of now use internal css for styling
+
+
+
+
+
+18th October, 2024
+
+Create a new django project and create 3 html files, home page, login page and registration page
+ 
