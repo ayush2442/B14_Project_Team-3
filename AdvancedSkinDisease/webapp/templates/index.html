@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align:left;
+      margin: 0;
+      padding: 0;
+    }
+    .custom-line {
+            width: 1500px;
+            height: 1px; 
+            background-color: rgb(211, 211, 211); 
+            border: none; 
+        }
+
+    .button-container {
+      margin-top: 20px;
+    }
+    .margined-text {
+            margin-left: 120px;
+        }
+    .button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .login-button {
+      background-color: #007bff;
+    }
+
+    .signup-button {
+      background-color: #28a745;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Just the index of the project for testing</h1>
-    <h1>home page replacement!!!</h1>
+  <div class="margined-text">
+  <h1>Welcome to Skin Disease Diagnosis Page!!!</h1>
+  <hr class="custom-line">
+  <h2>Welcome!</h2>
+  <div class="button-container">
+    <a href="login" class="button login-button">Login</a>
+    <a href="signup" class="button signup-button">Signup</a>
+  <hr class="custom-line">
+  </div>
+  </div>
 </body>
 </html>
