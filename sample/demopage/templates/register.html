@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        a{
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        #back{
+            height: 50px;
+            width: 100px;
+            background: darkgrey;
+            color: black;
+            font-size: larger;
+        }
+        input{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register yourself for furthur process!!!</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% for error in field.errors %}
+                <p style="color:red;"></p> {{ error }}
+                {% endfor %}
+            </p>
+        {% endfor %}
+
+
+        <!-- <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter your username"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your password"><br>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" placeholder="Re-Enter the password"><br>
+        <h3 style="color:red;"></h3> {{ msg }} <br> -->
+
+
+        
+        <button type="submit">Register</button>
+    </form><br>
+    <a href="/" id="back">Back</a>
+</body>
+</html>

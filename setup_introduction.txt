@@ -137,3 +137,44 @@ As of now use internal css for styling
 
 Create a new django project and create 3 html files, home page, login page and registration page
  
+
+
+
+
+
+
+22nd October,2024
+
+ -> CSRF Token is 
+
+ Database:
+    -> sqliteonline.com
+    -> open the db.sqlite3 file from your project, for the first time, it will be empty.
+ 
+in the terminal, run the command
+    -> python manage.py migrate
+        -> it will include all the predefiend database tables to our db.sqlite3.
+ 
+auth_group table:
+    -> used to store the details of the group of peoples, who are all registered and using our site.
+    -> admin,agent,user,dummy
+ 
+auth_user table:
+    -> used to store the predefined input tags of html command
+    -> username
+    -> password
+    -> firstname
+    -> lastname
+    -> dob
+
+
+
+
+
+
+
+
+23th October,2024
+
+In profile.html, we need to add 1 input tag as type image and one submit button
+ 

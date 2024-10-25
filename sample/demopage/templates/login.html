@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
+    <style>
+        /* a{
+            text-decoration: none;
+        }
+        #back{
+            height: 50px;
+            width: 100px;
+            background: darkgrey;
+            color: black;
+            font-size: larger;
+        } */
+         div{
+            height: 300px;
+            width: 100%;
+            margin-top: 12%;
+            text-align: center;
+            background: black;
+            color: white;
+         }
+         input{
+            margin-top: 15px;
+            margin-bottom: 15px;
+         }
+    </style>
 </head>
 <body>
-    <h1>
-        Welcome to Login Page
-    </h1>
+    <div>
+        <h1>Welome to login page!!!</h1> {{ msg }}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <h3></h3> {{ msg }} <br>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- <form method="post">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter your username"><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password"><br>
+        </form> -->
+
+        
+    </div>
+    <a href="/" id="back">Back</a>
 </body>
 </html>
