@@ -35,18 +35,12 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <h3></h3> {{ msg }} <br>
-            <button type="submit">Login</button>
-        </form>
-
-        <!-- <form method="post">
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Enter your username"><br>
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Enter your password"><br>
-        </form> -->
-
-        
+            <button type="submit">Login</button>
+        </form>
     </div>
     <a href="/" id="back">Back</a>
 </body>

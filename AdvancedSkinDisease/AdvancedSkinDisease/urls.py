@@ -1,6 +1,6 @@
 """
 URL configuration for AdvancedSkinDisease project.
-
+ 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
 Examples:
@@ -16,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf import settings
+from django.conf.urls.static import static 
 from webapp import views
-
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('login/', views.login, name='login'),
-    path('signup/', views.signup, name='signup'),
-]
+    path('',views.home,name='index'),
+    path('login/',views.login,name='login'),
+    path('register/',views.register,name='register'), # type: ignore
+    path('profile/',views.profile,name='profile'),
+    path('logout/', views.logout_view, name='logout'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

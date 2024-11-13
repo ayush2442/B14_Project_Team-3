@@ -1,62 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
+  <title>Welcome - Skin Disease Diagnosis</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align:left;
+      font-family: sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+      min-height: 100vh;
+      color: #333;
     }
-    .custom-line {
-            width: 1500px;
-            height: 1px; 
-            background-color: rgb(211, 211, 211); 
-            border: none; 
-        }
 
-    .button-container {
-      margin-top: 20px;
+    .background-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.2) 2%, transparent 0%);
+      background-size: 100px 100px;
+      pointer-events: none;
+      z-index: 1;
     }
-    .margined-text {
-            margin-left: 120px;
-        }
+
+    .nav-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 30px;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .page-header h1 {
+      margin: 0;
+      color: #cc0000;
+      font-size: 28px;
+    }
+
+    .custom-line {
+      width: 100%;
+      max-width: 1500px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+      border: none;
+      margin: 20px 0;
+    }
+
+    .content-container {
+      margin: 40px 120px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      color: #cc0000;
+      margin: 20px 0;
+      font-size: 24px;
+    }
+
     .button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       margin: 5px;
       border: none;
-      border-radius: 5px;
+      border-radius: 25px;
       cursor: pointer;
       color: white;
       font-size: 16px;
       text-decoration: none;
       display: inline-block;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
     .login-button {
-      background-color: #007bff;
+      background: linear-gradient(45deg, #cc0000, #ff1a1a);
+    }
+
+    .login-button:hover {
+      background: linear-gradient(45deg, #b30000, #e60000);
     }
 
     .signup-button {
-      background-color: #28a745;
+      background: linear-gradient(45deg, #990000, #cc0000);
+    }
+
+    .signup-button:hover {
+      background: linear-gradient(45deg, #800000, #b30000);
+    }
+
+    .disease-list {
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .disease-list li {
+      margin: 15px 0;
+      line-height: 1.8;
+      position: relative;
+      padding-left: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .disease-list li::before {
+      content: '•';
+      color: #cc0000;
+      font-size: 20px;
+      position: absolute;
+      left: -5px;
+    }
+
+    @media (max-width: 768px) {
+      .content-container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .page-header h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="margined-text">
-  <h1>Welcome to Skin Disease Diagnosis Page!!!</h1>
-  <hr class="custom-line">
-  <h2>Welcome!</h2>
-  <div class="button-container">
+  <div class="background-pattern"></div>
+
+  <div class="nav-container">
     <a href="login" class="button login-button">Login</a>
-    <a href="signup" class="button signup-button">Signup</a>
-  <hr class="custom-line">
+    <a href="register" class="button signup-button">Sign up</a>
   </div>
+
+  <div class="page-header">
+    <h1>Welcome to Skin Disease Diagnosis Page!!!</h1>
+  </div>
+
+  <div class="content-container">
+    <hr class="custom-line">
+
+    <h2>Understanding Skin Diseases</h2>
+    <p>Skin diseases are conditions that affect the body's largest organ - the skin. Early detection and proper
+      diagnosis
+      are crucial for effective treatment. Our advanced diagnostic system uses cutting-edge technology to help identify
+      various skin conditions, assisting healthcare professionals in providing accurate and timely treatment
+      recommendations.</p>
+
+    <h2>Common Skin Conditions We Can Help Diagnose:</h2>
+    <ul class="disease-list">
+      <li>Acne Vulgaris</li>
+      <li>Psoriasis</li>
+      <li>Atopic Dermatitis (Eczema)</li>
+      <li>Melanoma</li>
+      <li>Rosacea</li>
+    </ul>
   </div>
 </body>
 </html>

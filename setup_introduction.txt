@@ -178,3 +178,89 @@ auth_user table:
 
 In profile.html, we need to add 1 input tag as type image and one submit button
  
+
+
+
+
+
+
+
+
+
+
+
+11th November, 2024
+
+OpenCV implementation for image processing
+
+def profile(request):
+    if(request.method=="POST"):
+        img_name = request.FILES.get('uploadImage')
+        print(img_name)
+        return render(request,'profile.html',{'img':img_name})
+    else:
+        return render(request,'profile.html')
+
+
+
+12th November, 2024
+
+<body>
+    <h1>Welcome to Skin Disease Finding Web App!!!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        Image Upload: <input type="file" name="uploadImage"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <div>
+        {% if img %}
+            <img src="{{img}}" alt="No Image loaded" height="500px" width="500px">
+        {% endif %}
+    </div>
+</body>
+
+
+--> case 64 method <--
+
+if(request.method=="POST"):
+        if(request.FILES.get('uploadImage')):
+            img_name = request.FILES['uploadImage'].read()
+            encode = base64.b64encode(img_name).decode('utf-8')
+            img_url = f"data:image/jpeg;base64,{encode}"
+            return render(request,'profile.html',{'img':img_url})
+    else:
+        return render(request,'profile.html')
+
+
+
+
+Another method to load the images, with saving it. below is the codes
+ 
+Add the media details in settings.py 
+ 
+MEDIA_URL ='/media/'
+MEDIA_ROOT = BASE_DIR/'media'
+ 
+Add the media url to the urls.py
+ 
+from django.conf import settings
+from django.conf.urls.static import static
+ 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+ 
+
+views.py
+ 
+if(request.method=="POST"):
+        if(request.FILES.get('uploadImage')):
+            img_name = request.FILES['uploadImage']
+            # create a variable for our FileSystem package
+            fs = FileSystemStorage()
+            filename = fs.save(img_name.name,img_name)
+            #urls
+            img_url = fs.url(filename)
+            return render(request,'profile.html',{'img':img_url})
+    else:
+        return render(request,'profile.html')

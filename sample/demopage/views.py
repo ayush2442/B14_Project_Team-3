@@ -1,6 +1,10 @@
+
+from tkinter import image_names
 from django.shortcuts import render,redirect,HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.contrib.auth import authenticate
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
  
 # Create your views here.
 def home(request):
@@ -27,20 +31,20 @@ def login(request):
         form = AuthenticationForm()
         #used to create a basic login page with username and password
         return render(request,'login.html',{'form':form})
-# def login(request):
-#     if(request.user.is_authenticated):
-#         return redirect('/login')
-#     if(request.method == "POST"):
-#         un = request.POST['username']
-#         pw = request.POST['password']
-#         user = authenticate(request,username=un,password=pw)
-#         if(user is not None):
-#             return redirect('/profile')
-#         else:
-#             msg = 'Invalid Username/Password'
-#             return render(request,'login.html',{'msg':msg})
-#     else:
-        # return render(request,'login.html')
+def login(request):
+    if(request.user.is_authenticated):
+        return redirect('/login')
+    if(request.method == "POST"):
+        un = request.POST['username']
+        pw = request.POST['password']
+        user = authenticate(request,username=un,password=pw)
+        if(user is not None):
+            return redirect('/profile')
+        else:
+            msg = 'Invalid Username/Password'
+            return render(request,'login.html',{'msg':msg})
+    else:
+        return render(request,'login.html')
  
 def register(request):
     if(request.user.is_authenticated):
@@ -81,4 +85,9 @@ def register(request):
 #         return render(request,'register.html')
    
 def profile(request):
-    return render(request,'profile.html')
+    if(request.method=='POST'):
+        image_names = request.FILES.get('uploadImage')
+        print(image_names)
+        return render(request,'profile.html',{'img':image_names})
+    else:
+        return render(request,'profile.html')
