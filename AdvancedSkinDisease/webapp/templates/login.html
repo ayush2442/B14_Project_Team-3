@@ -89,21 +89,42 @@
     }
 
     .login-button {
-      background-color: #2b6cb0;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
 
-    .login-button:hover {
-      background-color: #2c5282;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+.login-button:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(53, 122, 189, 0.3);
+}
+
+.login-button:active {
+  background-color: #285a8f;
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(40, 90, 143, 0.3);
+}
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      height: 50px;
+      width: 100px;
+      background: darkgrey;
+      color: black;
+      text-align: center;
+      line-height: 50px;
+      text-decoration: none;
+      border-radius: 4px;
     }
 
     .medical-disclaimer {
@@ -142,13 +163,13 @@
       {% csrf_token %}
       {{ form.as_p }}
       <h3></h3> {{ msg }} <br>
-      <button type="submit">Login</button>
-    <div class="medical-disclaimer">
-      <strong>Medical Disclaimer:</strong> This system is designed to assist in skin disease diagnosis but should not
-      replace professional medical advice. Please consult with a healthcare provider for proper medical diagnosis and
-      treatment.
-    </div>
-    <a href="/" id="back">Back</a>
+      <button type="submit" class="login-button">Login</button>
+      <div class="medical-disclaimer">
+        <strong>Medical Disclaimer:</strong> This system is designed to assist in skin disease diagnosis but should not
+        replace professional medical advice. Please consult with a healthcare provider for proper medical diagnosis and
+        treatment.
+      </div>
+      <a href="/" id="back">Back</a>
   </div>
 </body>
 
