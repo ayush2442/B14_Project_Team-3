@@ -1,7 +1,3 @@
-# **TEAM 3**
-
----
-
 # **Advanced Skin Disease Diagnosis Leveraging Machine Learning**
 
 ## **Overview**
