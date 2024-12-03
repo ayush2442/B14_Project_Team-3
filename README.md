@@ -1,7 +1,21 @@
 # **Advanced Skin Disease Diagnosis Leveraging Machine Learning**
 
-## **Overview**
-The **Advanced Skin Disease Diagnosis** system combines machine learning and image processing to provide accurate and insightful analysis of skin conditions. By integrating secure user functionalities, robust image processing capabilities, and a voting ensemble model, this solution empowers users with real-time diagnostic capabilities directly from uploaded images. This tool aims to revolutionize medical diagnosis accessibility and efficiency, focusing on skin disease identification and analysis.
+## **OVERVIEW**
+
+The **Advanced Skin Disease Diagnosis System** is an innovative solution that leverages the power of machine learning and image processing to provide precise and actionable insights into skin conditions. Designed as a user-friendly platform, it integrates secure user functionalities, advanced OpenCV techniques, and a robust voting ensemble model to enable real-time diagnosis from uploaded skin condition images. 
+
+This project aims to bridge the gap between medical accessibility and technology by offering a diagnostic tool that is:
+- **Accessible**: Provides initial diagnostic insights, especially for individuals in remote or underserved areas.
+- **Accurate**: Utilizes machine learning to classify skin conditions with a high degree of precision, achieving 80% accuracy through an ensemble model.
+- **User-Centric**: Features intuitive account management, secure image uploads, and detailed diagnostic displays.
+
+Key features include:
+- **Image Processing with OpenCV**: Enhances image quality, detects contours, and segments affected areas for a detailed analysis.
+- **Voting Ensemble Model**: Combines Random Forest, SVM, and XGBoost for reliable classification of skin conditions.
+- **Dimensional Analysis**: Measures and displays the dimensions of affected areas for better understanding.
+- **Real-Time Functionality**: Seamless integration of backend processing and frontend UI to deliver instant results.
+
+This project is designed to empower users with technology-driven medical insights, supporting early diagnosis and encouraging timely medical intervention. By combining cutting-edge image processing techniques and machine learning models, the system showcases the potential of AI in revolutionizing healthcare accessibility and efficiency.
 
 ---
 
@@ -24,7 +38,7 @@ The **Advanced Skin Disease Diagnosis** system combines machine learning and ima
 
 ---
 
-## **Technologies Used**
+## **TECHNOLOGY STACK USED**
 1. **Programming Languages**: Python
 2. **Frameworks**: Django for backend, OpenCV for image processing
 3. **Machine Learning**: Voting Ensemble Model (Random Forest, SVM, Logistic Regression)
@@ -33,14 +47,14 @@ The **Advanced Skin Disease Diagnosis** system combines machine learning and ima
 
 ---
 
-## **How to Run**
+## **HOW TO RUN**
 1. Clone the repository:
    ```bash
    git clone https://github.com/b14team3/B14_Project.git
 
 2. Navigate to the project directory:
    ```bash
-   cd B14_Project
+   cd B14_Project/AdvancedSkinDisease
 
 3. Run the server:
    ```bash
@@ -52,7 +66,7 @@ The **Advanced Skin Disease Diagnosis** system combines machine learning and ima
 
 ---
 
-## **Contributors**
+## **CONTRIBUTERS**
 
 - Ayush Pandey (Team Lead)
 - Moram Hari Naga Siva Sri Nandan
