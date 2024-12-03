@@ -30,7 +30,7 @@ This project is designed to empower users with technology-driven medical insight
 - **Login Page**: _User-friendly login interface for secure access._  
   ![Login Page](/resultOutcome/login.png)
 
-- **Profile Page**: _Displays user information and uploaded images._  
+- **Profile Page**: _Display user page to uploade images of skin disease._  
   ![Profile Page](/resultOutcome/profile.png)
 
 - **Diagnosis Page**: _Interactive UI displaying diagnostic results and dimensional insights of the condition._  
