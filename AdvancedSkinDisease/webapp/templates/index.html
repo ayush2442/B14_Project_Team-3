@@ -16,17 +16,20 @@
     body {
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
-      background-image: url('/static/bg1.png');
+      background-image: url('/static/homebg.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      color: #ffffff;
+      /* Set default text color to white for readability */
     }
 
     .nav-container {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Add semi-transparent black for contrast */
       padding: 15px 30px;
       position: fixed;
       width: 100%;
@@ -35,11 +38,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     }
 
     .logo {
-      color: #cc0000;
+      color: #f05454;
+      /* A soft red to match the professional theme */
       font-size: 24px;
       font-weight: bold;
       text-decoration: none;
@@ -57,35 +61,40 @@
       cursor: pointer;
       color: white;
       text-decoration: none;
-      transition: transform 0.3s ease;
+      background-color: #f05454;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-    }
-
-    .login-button {
-      background-color: #cc0000;
-    }
-
-    .signup-button {
-      background-color: #990000;
+      background-color: #d43d3d;
     }
 
     .content-container {
-      max-width: 1200px;
-      margin: 100px auto 40px;
+      max-width: 1000px;
+      margin: 150px auto 40px;
       padding: 30px;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Darkens the container for better contrast */
+      color: #fff;
+      /* Keeps text white for consistency */
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     }
 
+
     h1 {
-      color: #cc0000;
+      color: #f05454;
       text-align: center;
       margin-bottom: 30px;
       font-size: 2.5em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      /* Adds depth */
+    }
+
+    p {
+      color: #ffffff;
+      /* Ensure text is always visible */
     }
 
     .features-grid {
@@ -96,15 +105,19 @@
     }
 
     .feature-card {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
+      /* Keeps light background */
+      color: #333;
+      /* Dark gray text for better visibility */
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .feature-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .feature-card h3 {
@@ -112,26 +125,35 @@
       margin-bottom: 10px;
     }
 
+    .feature-card p {
+      color: #333;
+      /* Dark gray for card text */
+      line-height: 1.5;
+      /* Improves readability */
+    }
+
     .cta-button {
       display: block;
       width: fit-content;
       margin: 40px auto;
       padding: 15px 30px;
-      background-color: #cc0000;
+      background-color: #f05454;
       color: white;
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
       transition: transform 0.3s ease, background-color 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      /* Makes button text stand out */
     }
 
     .cta-button:hover {
-      background-color: #990000;
+      background-color: #d43d3d;
       transform: scale(1.05);
     }
 
     footer {
-      background-color: #333;
+      background-color: rgba(0, 0, 0, 0.9);
       color: white;
       padding: 20px 0;
       margin-top: auto;
@@ -148,6 +170,16 @@
       margin: 10px 0;
       font-style: italic;
     }
+
+    a {
+      color: #f05454;
+      /* Links styled in soft red */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -160,54 +192,42 @@
       <a href="register" class="button signup-button">Sign up</a>
     </div>
   </nav>
-  
+
   <div class="content-container">
     <h1>Welcome to Skin Disease Diagnose leveraging Machine Learning</h1>
-  
+
     <p>
-      Our advanced AI-powered platform assists healthcare professionals in accurately diagnosing skin conditions through cutting-edge image recognition technology.
+      Our advanced AI-powered platform assists healthcare professionals in accurately diagnosing skin conditions through
+      cutting-edge image recognition technology.
     </p>
     <p style="font-size: 1.2em; font-weight: bold;">
       How does it work?
     </p>
-    <p>
-      <ul style="margin-left: 20px;">
-        <li>
-          <strong>Register and Login to the portal:</strong> Create new account or login to your existing account to access our suite of diagnostic tools.  
-        </li>
-        <li>
-          <strong>Upload images of the skin condition:</strong> Simply upload the image of the affected skin area.
-        </li>
-        <li>
-          <strong>Get instant analysis of the condition:</strong> Our Advanced Machine Learning Algorithms quickly analyze the uploaded image to provide an initial diagnosis result.  
-        </li>
-        <li>
-          <strong>Receive detailed reports and diagnostic results:</strong> Access comprehensive, easy-to-understand reports with a detailed breakdown of the diagnosis.
-        </li>
-      </ul>
-    </p>
-    
-    
-    
+    <ul style="margin-left: 20px;">
+      <li><strong>Register and Login to the portal:</strong> Create a new account or log in to access our diagnostic
+        tools.</li>
+      <li><strong>Upload images:</strong> Upload the affected skin area's image.</li>
+      <li><strong>Instant analysis:</strong> Our algorithms provide a diagnosis.</li>
+      <li><strong>Detailed reports:</strong> Access detailed diagnosis reports.</li>
+    </ul>
+
     <div class="features-grid">
       <div class="feature-card">
         <h3>Quick Diagnosis</h3>
-        <p>Get rapid analysis of skin conditions using our Advanced ML model. By processing images in real time, the system delivers reliable insights, helping you swiftly identify potential issues.</p>
+        <p>Get rapid analysis of skin conditions using our ML model.</p>
       </div>
       <div class="feature-card">
         <h3>Accurate Results</h3>
-        <p>Our system is extensively trained large dataset of verified cases, ensuring high accuracy and reliability in diagnosis
-          suggestions.</p>
+        <p>Trained on verified datasets, ensuring high diagnostic reliability.</p>
       </div>
       <div class="feature-card">
-        <h3>Advanced Diagnosis using Machine Learning</h3>
-        <p>Our Voting Ensemble Model integrates multiple algorithms to deliver accurate and reliable skin disease predictions,
-          enhancing diagnostic precision.</p>
+        <h3>Advanced Diagnosis</h3>
+        <p>Our ensemble model enhances diagnostic precision.</p>
       </div>
     </div>
     <a href="register" class="cta-button">Start Diagnosis Now</a>
   </div>
-  
+
   <footer>
     <div class="footer-content">
       <p>© 2024 SkinDiseaseDiagnose. All rights reserved.</p>
