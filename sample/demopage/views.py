@@ -8,6 +8,10 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from joblib import load
 from sklearn.preprocessing import RobustScaler
 import logging
+from .forms import CustomUserCreationForm 
+from django import forms
+from django.http import HttpResponseRedirect  # Import for redirection
+from django.urls import reverse
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -61,24 +65,39 @@ def login(request):
             })
     return render(request, 'login.html', {'form': AuthenticationForm()})
 
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        fields = ['username', 'password1', 'password2']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.error_messages = {
+                'required': f'{field.label} is required.',
+                'invalid': f'Enter a valid {field.label.lower()}.',
+            }
+        # Additional customization for specific fields
+        self.fields['password1'].error_messages.update({
+            'required': 'Password cannot be empty.',
+            'invalid': 'Password is invalid. Please follow the guidelines.',
+        })
+        self.fields['password2'].error_messages.update({
+            'required': 'Please confirm your password.',
+            'password_mismatch': 'The two passwords do not match.',
+        })
+
 def register(request):
     if request.user.is_authenticated:
         return redirect('/')
     
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            if user:
-                auth_login(request, user)
-                return redirect('/profile')
+            return HttpResponseRedirect(reverse('login'))
         else:
             return render(request, 'register.html', {
                 'form': form,
-                'msg': 'Please correct the errors below.'
+                'msg': 'Please correct the errors below.',
             })
     return render(request, 'register.html', {'form': UserCreationForm()})
 
