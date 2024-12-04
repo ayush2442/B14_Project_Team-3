@@ -50,7 +50,7 @@ This project is designed to empower users with technology-driven medical insight
 ## **HOW TO RUN**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/b14team3/B14_Project.git
+   git clone https://github.com/ayush2442/B14_Project.git
 
 2. Navigate to the project directory:
    ```bash
